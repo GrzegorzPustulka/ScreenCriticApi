@@ -1,4 +1,4 @@
-from sqlalchemy import Integer, String
+from sqlalchemy import String
 from sqlalchemy.orm import mapped_column, relationship
 
 from screen_critic.models.base import Base

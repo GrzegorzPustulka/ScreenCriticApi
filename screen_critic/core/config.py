@@ -5,7 +5,16 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file='../../.env', env_file_encoding='utf-8')
+    model_config = SettingsConfigDict(env_file="../../.env", env_file_encoding="utf-8")
+
+    # General
+    env: str = "dev"
+
+    # Security
+    # 60 minutes * 24 hours * 8 days = 8 days
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
+    JWT_SECRET: str = "TEST_SECRET_DO_NOT_USE_IN_PROD"
+    ALGORITHM: str = "HS256"
 
     # Database
     db_user: str = "postgres"

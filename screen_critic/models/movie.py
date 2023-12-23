@@ -1,4 +1,4 @@
-from sqlalchemy import Date, Float, ForeignKey, Integer, String, Text
+from sqlalchemy import UUID, Date, Float, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import mapped_column, relationship
 
 from screen_critic.models.base import Base
@@ -10,7 +10,7 @@ class Movie(Base):
     release_date = mapped_column(Date, nullable=True)
     description = mapped_column(Text, nullable=True)
     average_rating = mapped_column(Float, nullable=True)
-    category_id = mapped_column(Integer, ForeignKey("category.id"), nullable=True)
+    category_id = mapped_column(UUID, ForeignKey("category.id"), nullable=True)
 
     # Relationships
     reviews = relationship("Review", back_populates="movie")
