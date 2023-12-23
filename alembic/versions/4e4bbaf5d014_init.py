@@ -1,8 +1,8 @@
-"""Initial migration
+"""init
 
-Revision ID: 20e420ef5591
+Revision ID: 4e4bbaf5d014
 Revises: 
-Create Date: 2023-12-22 00:35:34.933186
+Create Date: 2023-12-23 00:39:22.592602
 
 """
 
@@ -13,7 +13,7 @@ import sqlalchemy as sa
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = "20e420ef5591"
+revision: str = "4e4bbaf5d014"
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -24,7 +24,7 @@ def upgrade() -> None:
     op.create_table(
         "category",
         sa.Column("name", sa.String(length=50), nullable=True),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("id"),
     )
@@ -38,7 +38,7 @@ def upgrade() -> None:
         sa.Column(
             "rank", sa.Enum("user", "reviewer", name="user_rank_enum"), nullable=False
         ),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("email"),
         sa.UniqueConstraint("id"),
@@ -51,8 +51,8 @@ def upgrade() -> None:
         sa.Column("release_date", sa.Date(), nullable=True),
         sa.Column("description", sa.Text(), nullable=True),
         sa.Column("average_rating", sa.Float(), nullable=True),
-        sa.Column("category_id", sa.Integer(), nullable=True),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("category_id", sa.UUID(), nullable=True),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.ForeignKeyConstraint(
             ["category_id"],
             ["category.id"],
@@ -63,9 +63,9 @@ def upgrade() -> None:
     op.create_table(
         "movielist",
         sa.Column("date_added", sa.Date(), nullable=False),
-        sa.Column("movie_id", sa.Integer(), nullable=True),
-        sa.Column("user_id", sa.Integer(), nullable=True),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("movie_id", sa.UUID(), nullable=True),
+        sa.Column("user_id", sa.UUID(), nullable=True),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.ForeignKeyConstraint(
             ["movie_id"],
             ["movie.id"],
@@ -80,9 +80,9 @@ def upgrade() -> None:
     op.create_table(
         "rate",
         sa.Column("rating", sa.Float(), nullable=False),
-        sa.Column("user_id", sa.Integer(), nullable=True),
-        sa.Column("movie_id", sa.Integer(), nullable=True),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("user_id", sa.UUID(), nullable=True),
+        sa.Column("movie_id", sa.UUID(), nullable=True),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.ForeignKeyConstraint(
             ["movie_id"],
             ["movie.id"],
@@ -99,9 +99,9 @@ def upgrade() -> None:
         sa.Column("rating", sa.Float(), nullable=True),
         sa.Column("comment", sa.Text(), nullable=True),
         sa.Column("date", sa.Date(), nullable=True),
-        sa.Column("user_id", sa.Integer(), nullable=True),
-        sa.Column("movie_id", sa.Integer(), nullable=True),
-        sa.Column("id", sa.Integer(), nullable=False),
+        sa.Column("user_id", sa.UUID(), nullable=True),
+        sa.Column("movie_id", sa.UUID(), nullable=True),
+        sa.Column("id", sa.UUID(), nullable=False),
         sa.ForeignKeyConstraint(
             ["movie_id"],
             ["movie.id"],

@@ -1,4 +1,5 @@
-from typing import Any, Dict, Generic, List, Type, TypeVar
+from typing import Generic, Type, TypeVar
+from uuid import UUID
 
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -14,7 +15,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
     def __init__(self, model: Type[ModelType]):
         self.model = model
 
-    def get(self, db: Session, id: int) -> ModelType | None:
+    def get(self, db: Session, id: str) -> ModelType | None:
         return db.query(self.model).filter(self.model.id == id).one_or_none()
 
     def create(self, db: Session, obj_in: CreateSchemaType) -> ModelType:

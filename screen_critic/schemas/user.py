@@ -1,20 +1,25 @@
-from pydantic import BaseModel
+from typing import Literal
+from uuid import UUID
+
+from pydantic import BaseModel, EmailStr
 
 
 class UserRead(BaseModel):
+    id: UUID
     username: str
-    email: str
-    hashed_password: str
+    email: EmailStr
     first_name: str
     last_name: str
+    rank: Literal["user", "reviewer"]
 
 
 class UserCreate(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     hashed_password: str
     first_name: str
     last_name: str
+    rank: Literal["user", "reviewer"]
 
 
 class UserUpdate(BaseModel):

@@ -1,4 +1,4 @@
-from sqlalchemy import Float, ForeignKey, Integer
+from sqlalchemy import UUID, Float, ForeignKey
 from sqlalchemy.orm import mapped_column, relationship
 
 from screen_critic.models.base import Base
@@ -6,8 +6,8 @@ from screen_critic.models.base import Base
 
 class Rate(Base):
     rating = mapped_column(Float, nullable=False)
-    user_id = mapped_column(Integer, ForeignKey("user.id"))
-    movie_id = mapped_column(Integer, ForeignKey("movie.id"))
+    user_id = mapped_column(UUID, ForeignKey("user.id"))
+    movie_id = mapped_column(UUID, ForeignKey("movie.id"))
 
     # Relationships
     user = relationship("User", back_populates="rates")
