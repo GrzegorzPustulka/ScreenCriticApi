@@ -18,6 +18,9 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
     def get(self, db: Session, id: str) -> ModelType | None:
         return db.query(self.model).filter(self.model.id == id).one_or_none()
 
+    def get_all(self, db: Session) -> list[ModelType]:
+        return db.query(self.model).all()
+
     def create(self, db: Session, obj_in: CreateSchemaType) -> ModelType:
         db_obj = self.model(**obj_in.model_dump())
         db.add(db_obj)
