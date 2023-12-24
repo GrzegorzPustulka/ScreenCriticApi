@@ -44,6 +44,12 @@ def read_users_me(current_user: User = Depends(get_current_user)):
     return current_user
 
 
-@router.delete("/me/delete", status_code=status.HTTP_204_NO_CONTENT)
+# TODO: Update user
+# @router.patch("/update", response_model=UserRead, status_code=status.HTTP_200_OK)
+# def update_user(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+#     user = crud_user.update(db, user_id, user_in)
+
+
+@router.delete("/delete", status_code=status.HTTP_204_NO_CONTENT)
 def delete_account(current_user: User = Depends(get_current_user)):
     crud_user.remove(current_user.id)
