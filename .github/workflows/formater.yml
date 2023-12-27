@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -39,7 +44,6 @@ jobs:
         if git diff-index --quiet HEAD; then
           echo "No code changes to commit."
         else
-          current_branch=$(git branch --show-current)
           git commit -m "Auto-format code with black and isort"
-          git push origin $current_branch
+          git push origin $steps.extract_branch.outputs.branch
         fi
