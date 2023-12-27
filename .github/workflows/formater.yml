@@ -45,5 +45,5 @@ jobs:
           echo "No code changes to commit."
         else
           git commit -m "Auto-format code with black and isort"
-          git push origin $steps.extract_branch.outputs.branch
+          git push origin ${{ steps.extract_branch.outputs.branch }}
         fi
