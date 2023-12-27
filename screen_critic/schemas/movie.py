@@ -9,11 +9,11 @@ class CategoryRead(BaseModel):
 
 
 class MovieCreate(CategoryRead):
-    raise NotImplementedError
+    pass
 
 
 class MovieUpdate(CategoryRead):
-    raise NotImplementedError
+    pass
 
 
 class MovieRead(CategoryRead):

@@ -9,8 +9,8 @@ class CategoryRead(BaseModel):
 
 
 class CategoryCreate(CategoryRead):
-    raise NotImplementedError
+    pass
 
 
 class CategoryUpdate(CategoryRead):
-    raise NotImplementedError
+    pass
