@@ -12,14 +12,8 @@ from screen_critic.main import app
 from screen_critic.models import Base, User
 
 from .command import CreateObjectCommand
-from .factory import (
-    CategoryFactory,
-    MovieFactory,
-    UserFactory,
-    MovieListFactory,
-    RateFactory,
-    ReviewFactory,
-)
+from .factory import (CategoryFactory, MovieFactory, MovieListFactory,
+                      RateFactory, ReviewFactory, UserFactory)
 
 SQLALCHEMY_DATABASE_URI = f"postgresql://postgres:{settings.db_password.get_secret_value()}@localhost:5432/tests"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
