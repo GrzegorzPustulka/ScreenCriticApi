@@ -72,5 +72,13 @@ class RateFactory(Factory):
 
 class ReviewFactory(Factory):
     @staticmethod
-    def create(rating: float, comment: str, date: str, user_id: UUID, movie_id: UUID) -> Review:
-        return Review(rating=rating, comment=comment, date=date, user_id=user_id, movie_id=movie_id)
+    def create(
+        rating: float, comment: str, date: str, user_id: UUID, movie_id: UUID
+    ) -> Review:
+        return Review(
+            rating=rating,
+            comment=comment,
+            date=date,
+            user_id=user_id,
+            movie_id=movie_id,
+        )
