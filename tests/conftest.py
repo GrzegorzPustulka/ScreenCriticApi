@@ -9,11 +9,17 @@ from screen_critic.api.deps import get_db
 from screen_critic.core.config import settings
 from screen_critic.core.security import get_password_hash
 from screen_critic.main import app
-from screen_critic.models import Base, User
+from screen_critic.models import Base
 
 from .command import CreateObjectCommand
-from .factory import (CategoryFactory, MovieFactory, MovieListFactory,
-                      RateFactory, ReviewFactory, UserFactory)
+from .factory import (
+    CategoryFactory,
+    MovieFactory,
+    MovieListFactory,
+    RateFactory,
+    ReviewFactory,
+    UserFactory,
+)
 
 SQLALCHEMY_DATABASE_URI = f"postgresql://postgres:{settings.db_password.get_secret_value()}@localhost:5432/tests"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
