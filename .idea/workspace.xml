@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78a09fbc-e505-49c5-b983-0793369198b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_endpoints/test_auth_endpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/formater.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/formater.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_critic/api/routes/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/api/routes/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_critic/api/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/api/routes/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_critic/crud/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/crud/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_critic/schemas/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/schemas/category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_critic/schemas/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/schemas/movie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_critic/schemas/movie_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_endpoints/test_user_endpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_endpoints/test_user_endpoint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,22 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;movie__list&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projekty/ScreenCritic&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "github__actions",
+    "last_opened_file_path": "D:/Projekty/ScreenCritic",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projekty\ScreenCritic\tests\test_endpoints" />
