@@ -12,10 +12,10 @@ class CRUDMovie(CRUDBase[Movie, MovieCreate, MovieUpdate]):
         return db.query(Movie).filter(Movie.title == title).all()
 
     @staticmethod
-    def get_random(db: Session):
+    def get_random(db: Session, category_id: str = None):
         return (
             db.query(Movie)
-            .filter(Movie.average_rating >= 7.5)
+            .filter(Movie.average_rating >= 7.5, Movie.category_id == category_id)
             .order_by(func.random())
             .first()
         )
