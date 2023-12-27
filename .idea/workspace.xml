@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78a09fbc-e505-49c5-b983-0793369198b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/formater.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/formater.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
