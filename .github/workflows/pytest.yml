@@ -40,6 +40,6 @@ jobs:
 
     - name: Run Pytest
       env:
-        DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres
+        DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/tests
       run: |
         pytest
