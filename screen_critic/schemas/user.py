@@ -1,7 +1,7 @@
 from typing import Literal
 from uuid import UUID
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 
 class UserRead(BaseModel):
@@ -16,7 +16,7 @@ class UserRead(BaseModel):
 class UserCreate(BaseModel):
     username: str
     email: EmailStr
-    hashed_password: str
+    hashed_password: str = Field(alias="password")
     first_name: str
     last_name: str
     rank: Literal["user", "reviewer"]
