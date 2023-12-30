@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import UUID, Date, ForeignKey
 from sqlalchemy.orm import mapped_column, relationship
 
@@ -5,9 +7,11 @@ from screen_critic.models.base import Base
 
 
 class MovieList(Base):
-    date_added = mapped_column(Date, nullable=False)
-    movie_id = mapped_column(UUID, ForeignKey("movie.id"))
-    user_id = mapped_column(UUID, ForeignKey("user.id"))
+    date_added = mapped_column(
+        Date, nullable=False, default=datetime.now().strftime("%Y-%m-%d")
+    )
+    movie_id = mapped_column(UUID, ForeignKey("movie.id"), nullable=False)
+    user_id = mapped_column(UUID, ForeignKey("user.id"), nullable=False)
 
     # Relationships
     user = relationship("User", back_populates="movie_lists")
