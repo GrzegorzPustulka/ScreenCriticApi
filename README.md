@@ -174,6 +174,59 @@ curl -X GET http://localhost:8000/movie/categories
 curl -X GET http://localhost:8000/movie/random/0a4a942b-82de-429b-90a7-0ca99ceca00d
 ```
 
+### Moduł Zarządzania Listą ulubionych filmów
+
+#### Dodawanie filmu do listy (`/movie_list/`)
+- Ten endpoint umożliwia użytkownikom dodawanie filmów do ich indywidualnej listy. Jeśli film jest już na liście użytkownika, zostanie zwrócony błąd HTTP 409. W przeciwnym razie film zostanie dodany do listy użytkownika.
+
+**Przykład użycia:**
+
+```bash
+curl -X POST http://localhost:8000/movie_list/ -H "Authorization: Bearer jwt-token" -H "Content-Type: application/json" -d '{"movie_id": "123"}'
+```
+
+**Przykładowa odpowiedź::**
+```
+HTTP/1.1 204 No Content
+```
+
+#### Usuwanie filmu z listy (`/movie_list/{movie_id}`)
+- Użytkownicy mogą usunąć film ze swojej listy za pomocą tego endpointu. Jeśli film nie znajduje się na liście, zostanie zwrócony błąd HTTP 404. W przypadku sukcesu, film zostanie usunięty, a użytkownik otrzyma kod stanu HTTP 204 (No Content).
+
+- **Przykład użycia:**
+
+```bash
+curl -X POST http://localhost:8000/movie_list/ -H "Authorization: Bearer jwt-token" -H "Content-Type: application/json" -d '{"movie_id": "123"}'
+```
+
+**Przykładowa odpowiedź::**
+```
+HTTP/1.1 204 No Content
+```
+
+#### Odczyt listy filmów użytkownika (/movie_list/list)
+- Ten endpoint pozwala użytkownikom na wyświetlenie wszystkich filmów znajdujących się na ich liście. Jeśli lista jest pusta, zostanie zwrócony błąd HTTP 404. W przeciwnym razie użytkownik otrzyma listę filmów wraz z datami dodania i kategoriami.**Przykład użycia:**
+
+**Przykład użycia:**
+
+```
+curl -X POST http://localhost:8000/movie_list/ -H "Authorization: Bearer jwt-token" -H "Content-Type: application/json" -d '{"movie_id": "123"}'
+```
+
+**Przykładowa odpowiedź::**
+```
+[
+    {
+        "date_added": "2021-01-01",
+        "category_name": "Komedia",
+        "title": "Śmieszny film",
+        "description": "Opis filmu",
+        // inne pola filmu
+    },
+    // kolejne filmy
+]
+```
+
 ## Jak uruchomić testy
 
 ```bash
