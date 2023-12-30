@@ -9,12 +9,14 @@ ScreenCriticAPI to RESTful API, które umożliwia dostęp do bazy danych filmów
 ```bash
 git clone https://github.com/grzegorzpustulka/screenCriticApi.git
 cd screenCriticApi
-
-# Instalacja zależności
-pip install -r requirements.txt
-
-# Uruchomienie serwera
+poetry shell
 uvicorn screen_critic.main:app
+```
+
+## Automatyczna dokumentacja API
+
+```http
+http://localhost:8000/docs
 ```
 
 ## Jak zacząć
@@ -175,7 +177,14 @@ curl -X GET http://localhost:8000/movie/random/0a4a942b-82de-429b-90a7-0ca99ceca
 ## Jak uruchomić testy
 
 ```bash
+poetry shell
 pytest
+```
+
+## Jak uruchomić pre-commit
+
+```bash
+pre-commit install
 ```
 
 ## Wzorce projektowe

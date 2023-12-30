@@ -11,13 +11,7 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Extract branch name
-      shell: bash
-      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-      id: extract_branch
-
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -26,15 +20,15 @@ jobs:
       with:
         python-version: 3.12
 
-    - name: Install dependencies
+    - name: Install Poetry
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt 
+        pip install poetry
+        poetry install
 
     - name: Format code with isort
       run: |
-        isort --check-only --profile black .
+        poetry run isort --check-only --profile black .
 
     - name: Format code with black
       run: |
-        black --check .
+        poetry run black --check .
