@@ -17,6 +17,12 @@ pip install -r requirements.txt
 uvicorn screen_critic.main:app
 ```
 
+## Automatyczna dokumentacja API
+
+```http
+http://localhost:8000/docs
+```
+
 ## Jak zacząć
 1. Uruchom API, postępuj zgodnie z instrukcjami instalacji.
 2. Otwórz przeglądarkę lub narzędzie do wysyłania zapytań HTTP (np. Postman, Curl).
@@ -176,6 +182,12 @@ curl -X GET http://localhost:8000/movie/random/0a4a942b-82de-429b-90a7-0ca99ceca
 
 ```bash
 pytest
+```
+
+## Jak uruchomić pre-commit
+
+```bash
+pre-commit install
 ```
 
 ## Wzorce projektowe
